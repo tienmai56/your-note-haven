@@ -135,7 +135,7 @@ function GoalMock() {
 function Hero() {
   return (
     <section id="top" className="border-b border-border/60">
-      <div className="mx-auto grid max-w-6xl gap-12 px-6 py-20 md:grid-cols-2 md:py-28 md:gap-16 items-center">
+      <div className="mx-auto grid max-w-6xl gap-12 px-6 py-20 md:grid-cols-2 md:py-28 md:gap-16 items-center md:pb-40">
         <div>
           <span className="inline-block text-xs font-medium uppercase tracking-[0.2em] text-primary mb-5">
             For jiu-jitsu practitioners
