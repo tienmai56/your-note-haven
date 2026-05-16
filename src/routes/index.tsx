@@ -554,6 +554,7 @@ function Landing() {
       <main>
         <Hero />
         <Features />
+        <Banner />
         <HowItWorks />
         <PreviewMockups />
         <FAQ />
