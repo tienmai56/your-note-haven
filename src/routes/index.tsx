@@ -163,8 +163,20 @@ function Hero() {
           </div>
         </div>
 
-        <div className="md:pl-6">
-          <GoalMock />
+        <div className="md:pl-6 relative">
+          <div className="relative rounded-2xl overflow-hidden border border-border">
+            <img
+              src={heroImg}
+              alt="A jiu-jitsu practitioner writing reflections in a notebook after class"
+              width={1280}
+              height={1280}
+              className="w-full h-[420px] md:h-[520px] object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-tr from-background/80 via-background/30 to-transparent" />
+          </div>
+          <div className="absolute -bottom-6 -left-4 md:-left-10 w-[78%] max-w-sm">
+            <GoalMock />
+          </div>
         </div>
       </div>
     </section>
