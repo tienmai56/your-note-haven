@@ -19,6 +19,8 @@ import {
 } from "@/components/ui/accordion";
 import { Toaster } from "@/components/ui/sonner";
 import { toast } from "sonner";
+import heroImg from "@/assets/hero-reflection.jpg";
+import disciplineImg from "@/assets/section-discipline.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
