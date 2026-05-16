@@ -19,6 +19,8 @@ import {
 } from "@/components/ui/accordion";
 import { Toaster } from "@/components/ui/sonner";
 import { toast } from "sonner";
+import heroImg from "@/assets/hero-reflection.jpg";
+import disciplineImg from "@/assets/section-discipline.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -133,7 +135,7 @@ function GoalMock() {
 function Hero() {
   return (
     <section id="top" className="border-b border-border/60">
-      <div className="mx-auto grid max-w-6xl gap-12 px-6 py-20 md:grid-cols-2 md:py-28 md:gap-16 items-center">
+      <div className="mx-auto grid max-w-6xl gap-12 px-6 py-20 md:grid-cols-2 md:py-28 md:gap-16 items-center md:pb-40">
         <div>
           <span className="inline-block text-xs font-medium uppercase tracking-[0.2em] text-primary mb-5">
             For jiu-jitsu practitioners
@@ -161,8 +163,20 @@ function Hero() {
           </div>
         </div>
 
-        <div className="md:pl-6">
-          <GoalMock />
+        <div className="md:pl-6 relative">
+          <div className="relative rounded-2xl overflow-hidden border border-border">
+            <img
+              src={heroImg}
+              alt="A jiu-jitsu practitioner writing reflections in a notebook after class"
+              width={1280}
+              height={1280}
+              className="w-full h-[420px] md:h-[520px] object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-tr from-background/80 via-background/30 to-transparent" />
+          </div>
+          <div className="absolute -bottom-6 -left-4 md:-left-10 w-[78%] max-w-sm">
+            <GoalMock />
+          </div>
         </div>
       </div>
     </section>
@@ -204,6 +218,34 @@ function Features() {
               <p className="text-sm text-muted-foreground leading-relaxed">{f.body}</p>
             </div>
           ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Banner() {
+  return (
+    <section className="border-b border-border/60">
+      <div className="relative h-[280px] md:h-[400px] overflow-hidden">
+        <img
+          src={disciplineImg}
+          alt="A worn jiu-jitsu belt next to a notebook and pen"
+          width={1920}
+          height={1080}
+          loading="lazy"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/70 to-background/20" />
+        <div className="relative mx-auto max-w-6xl h-full px-6 flex items-center">
+          <blockquote className="max-w-lg">
+            <p className="font-heading text-2xl md:text-4xl font-semibold leading-tight">
+              "Reflection without a preset goal is like grading a test without a rubric."
+            </p>
+            <footer className="mt-4 text-sm text-muted-foreground">
+              The reason we built this.
+            </footer>
+          </blockquote>
         </div>
       </div>
     </section>
@@ -512,6 +554,7 @@ function Landing() {
       <main>
         <Hero />
         <Features />
+        <Banner />
         <HowItWorks />
         <PreviewMockups />
         <FAQ />
