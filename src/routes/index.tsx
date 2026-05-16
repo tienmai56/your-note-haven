@@ -224,6 +224,34 @@ function Features() {
   );
 }
 
+function Banner() {
+  return (
+    <section className="border-b border-border/60">
+      <div className="relative h-[280px] md:h-[400px] overflow-hidden">
+        <img
+          src={disciplineImg}
+          alt="A worn jiu-jitsu belt next to a notebook and pen"
+          width={1920}
+          height={1080}
+          loading="lazy"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/70 to-background/20" />
+        <div className="relative mx-auto max-w-6xl h-full px-6 flex items-center">
+          <blockquote className="max-w-lg">
+            <p className="font-heading text-2xl md:text-4xl font-semibold leading-tight">
+              "Reflection without a preset goal is like grading a test without a rubric."
+            </p>
+            <footer className="mt-4 text-sm text-muted-foreground">
+              The reason we built this.
+            </footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function HowItWorks() {
   const steps = [
     {
