@@ -21,17 +21,18 @@ import { Toaster } from "@/components/ui/sonner";
 import { toast } from "sonner";
 import heroImg from "@/assets/hero-reflection.jpg";
 import disciplineImg from "@/assets/section-discipline.jpg";
+import logo from "@/assets/mat-mind-logo.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Intentional Training Notes — Train BJJ with purpose" },
+      { title: "Mat Mind — Train BJJ with purpose" },
       {
         name: "description",
         content:
           "A reflection journal for jiu-jitsu practitioners. Set goals, plan tasks before class, and reflect against them after. Train with intention, not just attendance.",
       },
-      { property: "og:title", content: "Intentional Training Notes — Train BJJ with purpose" },
+      { property: "og:title", content: "Mat Mind — Train BJJ with purpose" },
       {
         property: "og:description",
         content:
@@ -47,11 +48,15 @@ export const Route = createFileRoute("/")({
 function Wordmark() {
   return (
     <a href="#top" className="flex items-center gap-2 group">
-      <span className="grid place-items-center h-7 w-7 rounded-md bg-primary text-primary-foreground font-heading font-bold text-sm">
-        IT
-      </span>
-      <span className="font-heading font-semibold tracking-tight text-sm">
-        Intentional Training
+      <img
+        src={logo}
+        alt="Mat Mind logo"
+        width={32}
+        height={32}
+        className="h-8 w-8 rounded-lg"
+      />
+      <span className="font-heading font-extrabold tracking-tight text-base">
+        Mat Mind
       </span>
     </a>
   );
@@ -540,7 +545,7 @@ function Footer() {
       <div className="mx-auto max-w-6xl px-6 py-10 flex flex-wrap items-center justify-between gap-4 text-sm text-muted-foreground">
         <Wordmark />
         <span>Train with purpose.</span>
-        <span>© {new Date().getFullYear()} Intentional Training Notes</span>
+        <span>© {new Date().getFullYear()} Mat Mind</span>
       </div>
     </footer>
   );
