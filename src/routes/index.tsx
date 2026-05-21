@@ -19,9 +19,11 @@ import {
 } from "@/components/ui/accordion";
 import { Toaster } from "@/components/ui/sonner";
 import { toast } from "sonner";
-import heroImg from "@/assets/hero-reflection.jpg";
 import disciplineImg from "@/assets/section-discipline.jpg";
 import logo from "@/assets/mat-mind-logo.png";
+import appGoals from "@/assets/app-goals.png";
+import appPlan from "@/assets/app-plan.png";
+import appShare from "@/assets/app-share.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -138,76 +140,16 @@ function GoalMock() {
 }
 
 function HeroPhone() {
-  const entries = [
-    {
-      n: 1,
-      text:
-        "Hit the half-guard entry twice in rolling. Lost the second leg both times — need to cross-face earlier.",
-    },
-    {
-      n: 2,
-      text:
-        "Stayed calm under mount instead of bridging blind. Framed, recovered half. First time it actually worked.",
-    },
-    {
-      n: 3,
-      text:
-        "Got smashed from side control again. Hips were flat. Plan: drill shrimp + underhook entry Thursday.",
-    },
-  ];
   return (
-    <div className="relative mx-auto w-[300px] sm:w-[340px]">
-      <div className="absolute -inset-10 rounded-[3rem] bg-primary/20 blur-3xl" aria-hidden />
-      <div className="relative rounded-[2.75rem] border border-border bg-card p-2.5 shadow-2xl">
-        <div className="relative rounded-[2.25rem] bg-[oklch(0.18_0.03_270)] text-white overflow-hidden h-[640px]">
-          <div className="absolute left-1/2 top-2 z-10 h-5 w-24 -translate-x-1/2 rounded-b-2xl bg-black/80" />
-          <div className="flex items-center justify-between px-6 pt-4 text-[11px] font-medium text-white/80">
-            <span>22:19</span>
-            <span>● ●</span>
-          </div>
-          <div className="flex items-center justify-between px-5 mt-3">
-            <div className="h-7 w-7 rounded-full bg-white/10 grid place-items-center text-xs">⌕</div>
-            <span className="font-heading font-bold">Mat Mind</span>
-            <div className="h-7 w-7 rounded-full bg-white/10 grid place-items-center text-xs">⚙</div>
-          </div>
-          <div className="px-6 mt-4 text-center">
-            <p className="italic text-[13px] leading-snug text-white/85">
-              "Reflection without a preset goal is like grading a test without a rubric."
-            </p>
-            <p className="mt-1.5 text-[11px] text-white/50">— Mat Mind</p>
-          </div>
-          <div className="mt-4 flex items-center justify-between px-6 text-[11px] text-white/70">
-            <span>▣ 142 Sessions</span>
-            <span style={{ color: "var(--mint)" }}>♡ 12 Breakthroughs</span>
-          </div>
-          <div className="mx-4 mt-3 rounded-xl overflow-hidden border border-white/10">
-            <img src={heroImg} alt="" className="w-full h-28 object-cover" />
-          </div>
-          <div className="mt-3 px-5 space-y-2.5">
-            {entries.map((e) => (
-              <div key={e.n} className="flex gap-3">
-                <span
-                  className="font-heading text-xl font-bold leading-none mt-0.5"
-                  style={{ color: "var(--mint)" }}
-                >
-                  {e.n}
-                </span>
-                <p className="text-[11.5px] leading-snug text-white/85">{e.text}</p>
-              </div>
-            ))}
-          </div>
-          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-4 rounded-full bg-black/50 backdrop-blur px-5 py-2.5 border border-white/10">
-            <span className="text-[10px] text-white/70">Entries</span>
-            <span
-              className="grid place-items-center h-8 w-8 rounded-full text-black font-bold"
-              style={{ background: "var(--mint)" }}
-            >
-              +
-            </span>
-            <span className="text-[10px] text-white/70">Calendar</span>
-          </div>
-        </div>
-      </div>
+    <div className="relative mx-auto w-[300px] sm:w-[360px]">
+      <div className="absolute -inset-12 rounded-[3rem] bg-primary/20 blur-3xl" aria-hidden />
+      <img
+        src={appGoals}
+        alt="Mat Mind app showing active jiu-jitsu goals: Pin Side Control, Mount Escape, Over Under Pass"
+        width={1276}
+        height={2204}
+        className="relative w-full h-auto drop-shadow-2xl"
+      />
     </div>
   );
 }
@@ -387,20 +329,28 @@ function HowItWorks() {
   );
 }
 
-function PhoneFrame({ children, className = "" }: { children: React.ReactNode; className?: string }) {
-  return (
-    <div
-      className={`relative w-[260px] rounded-[2rem] border border-border bg-card p-2 shadow-2xl ${className}`}
-    >
-      <div className="absolute left-1/2 top-2 z-10 h-4 w-20 -translate-x-1/2 rounded-b-2xl bg-background/80" />
-      <div className="rounded-[1.6rem] bg-background overflow-hidden h-[520px]">
-        {children}
-      </div>
-    </div>
-  );
-}
-
 function PreviewMockups() {
+  const shots = [
+    {
+      src: appGoals,
+      alt: "Active Goals screen with Pin Side Control, Mount Escape, Over Under Pass",
+      caption: "Goals — break a theme into specific tasks.",
+      offset: "md:translate-y-8",
+    },
+    {
+      src: appPlan,
+      alt: "Plan screen with calendar and reflection on Pin Side Control",
+      caption: "Plan — schedule what to hunt for, then reflect.",
+      offset: "",
+    },
+    {
+      src: appShare,
+      alt: "Share preview formatted as a letter to a training partner asking for feedback",
+      caption: "Share — ask a partner or coach for feedback.",
+      offset: "md:translate-y-8",
+    },
+  ];
+
   return (
     <section className="border-b border-border/60 overflow-hidden">
       <div className="mx-auto max-w-6xl px-6 py-20">
@@ -413,111 +363,22 @@ function PreviewMockups() {
           </h2>
         </div>
 
-        <div className="relative flex flex-wrap items-start justify-center gap-8 md:gap-4">
-          {/* Goals list */}
-          <PhoneFrame className="md:translate-y-6">
-            <div className="px-4 pt-8 pb-4">
-              <div className="text-xs uppercase tracking-widest text-muted-foreground mb-1">
-                Goals
-              </div>
-              <h4 className="font-heading text-xl font-bold mb-5">Working on</h4>
-              <div className="space-y-2">
-                {[
-                  { name: "Leg locks", tasks: 3 },
-                  { name: "Guard retention", tasks: 4 },
-                  { name: "Mount attacks", tasks: 2 },
-                  { name: "Surviving", tasks: 1 },
-                ].map((g) => (
-                  <div
-                    key={g.name}
-                    className="flex items-center justify-between rounded-lg border border-border/60 bg-card/60 px-3 py-2.5"
-                  >
-                    <span className="text-sm font-medium">{g.name}</span>
-                    <span className="text-xs text-muted-foreground">{g.tasks} tasks</span>
-                  </div>
-                ))}
-                <button className="flex items-center gap-2 text-sm text-muted-foreground px-3 py-2.5 w-full">
-                  <Plus className="h-3.5 w-3.5" /> Add goal
-                </button>
-              </div>
-            </div>
-          </PhoneFrame>
-
-          {/* Plan training */}
-          <PhoneFrame>
-            <div className="px-4 pt-8 pb-4">
-              <div className="text-xs uppercase tracking-widest text-muted-foreground mb-1">
-                Plan
-              </div>
-              <h4 className="font-heading text-xl font-bold mb-1">Tuesday</h4>
-              <p className="text-xs text-muted-foreground mb-5">Jan 14 · No-gi class</p>
-              <div className="space-y-2">
-                {[
-                  { label: "Entry from half guard", on: true },
-                  { label: "Controlling two legs", on: true },
-                  { label: "Finishing mechanics", on: false },
-                  { label: "Frames from mount", on: false },
-                ].map((t) => (
-                  <div
-                    key={t.label}
-                    className={`flex items-center justify-between rounded-lg border px-3 py-2.5 ${
-                      t.on
-                        ? "border-primary/40 bg-primary/10"
-                        : "border-border/60 bg-card/60"
-                    }`}
-                  >
-                    <span className="text-sm">{t.label}</span>
-                    <div
-                      className={`h-4 w-4 rounded border ${
-                        t.on ? "bg-primary border-primary" : "border-border"
-                      }`}
-                    />
-                  </div>
-                ))}
-              </div>
-              <button className="mt-5 w-full rounded-md bg-primary text-primary-foreground py-2.5 text-sm font-medium">
-                Save plan
-              </button>
-            </div>
-          </PhoneFrame>
-
-          {/* Timeline */}
-          <PhoneFrame className="md:translate-y-6">
-            <div className="px-4 pt-8 pb-4">
-              <div className="text-xs uppercase tracking-widest text-muted-foreground mb-1">
-                Task timeline
-              </div>
-              <h4 className="font-heading text-lg font-bold mb-5">Entry from half guard</h4>
-              <div className="space-y-3">
-                {[
-                  {
-                    date: "Thu · Jan 16",
-                    done: true,
-                    note: "Cleaner this time. Cross-faced first.",
-                  },
-                  { date: "Tue · Jan 14", done: true, note: "Lost the leg twice." },
-                  { date: "Sun · Jan 12", done: false },
-                ].map((e) => (
-                  <div key={e.date} className="border-l-2 border-border pl-3">
-                    <div className="flex items-center gap-2 mb-1">
-                      <div
-                        className={`h-3 w-3 rounded-full -ml-[1.1rem] border-2 border-background ${
-                          e.done ? "bg-primary" : "bg-muted"
-                        }`}
-                      />
-                      <span className="text-xs text-muted-foreground">{e.date}</span>
-                    </div>
-                    {e.note && (
-                      <p className="text-sm leading-snug text-foreground/90">{e.note}</p>
-                    )}
-                    {!e.note && (
-                      <p className="text-xs italic text-muted-foreground">Missed</p>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </PhoneFrame>
+        <div className="relative grid gap-10 md:grid-cols-3 md:gap-6 items-start justify-items-center">
+          {shots.map((s) => (
+            <figure key={s.caption} className={`w-full max-w-[300px] ${s.offset}`}>
+              <img
+                src={s.src}
+                alt={s.alt}
+                width={1276}
+                height={2204}
+                loading="lazy"
+                className="w-full h-auto drop-shadow-2xl"
+              />
+              <figcaption className="mt-5 text-center text-sm text-muted-foreground">
+                {s.caption}
+              </figcaption>
+            </figure>
+          ))}
         </div>
       </div>
     </section>
