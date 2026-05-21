@@ -137,51 +137,121 @@ function GoalMock() {
   );
 }
 
+function HeroPhone() {
+  const entries = [
+    {
+      n: 1,
+      text:
+        "Hit the half-guard entry twice in rolling. Lost the second leg both times — need to cross-face earlier.",
+    },
+    {
+      n: 2,
+      text:
+        "Stayed calm under mount instead of bridging blind. Framed, recovered half. First time it actually worked.",
+    },
+    {
+      n: 3,
+      text:
+        "Got smashed from side control again. Hips were flat. Plan: drill shrimp + underhook entry Thursday.",
+    },
+  ];
+  return (
+    <div className="relative mx-auto w-[300px] sm:w-[340px]">
+      <div className="absolute -inset-10 rounded-[3rem] bg-primary/20 blur-3xl" aria-hidden />
+      <div className="relative rounded-[2.75rem] border border-border bg-card p-2.5 shadow-2xl">
+        <div className="relative rounded-[2.25rem] bg-[oklch(0.18_0.03_270)] text-white overflow-hidden h-[640px]">
+          <div className="absolute left-1/2 top-2 z-10 h-5 w-24 -translate-x-1/2 rounded-b-2xl bg-black/80" />
+          <div className="flex items-center justify-between px-6 pt-4 text-[11px] font-medium text-white/80">
+            <span>22:19</span>
+            <span>● ●</span>
+          </div>
+          <div className="flex items-center justify-between px-5 mt-3">
+            <div className="h-7 w-7 rounded-full bg-white/10 grid place-items-center text-xs">⌕</div>
+            <span className="font-heading font-bold">Mat Mind</span>
+            <div className="h-7 w-7 rounded-full bg-white/10 grid place-items-center text-xs">⚙</div>
+          </div>
+          <div className="px-6 mt-4 text-center">
+            <p className="italic text-[13px] leading-snug text-white/85">
+              "Reflection without a preset goal is like grading a test without a rubric."
+            </p>
+            <p className="mt-1.5 text-[11px] text-white/50">— Mat Mind</p>
+          </div>
+          <div className="mt-4 flex items-center justify-between px-6 text-[11px] text-white/70">
+            <span>▣ 142 Sessions</span>
+            <span style={{ color: "var(--mint)" }}>♡ 12 Breakthroughs</span>
+          </div>
+          <div className="mx-4 mt-3 rounded-xl overflow-hidden border border-white/10">
+            <img src={heroImg} alt="" className="w-full h-28 object-cover" />
+          </div>
+          <div className="mt-3 px-5 space-y-2.5">
+            {entries.map((e) => (
+              <div key={e.n} className="flex gap-3">
+                <span
+                  className="font-heading text-xl font-bold leading-none mt-0.5"
+                  style={{ color: "var(--mint)" }}
+                >
+                  {e.n}
+                </span>
+                <p className="text-[11.5px] leading-snug text-white/85">{e.text}</p>
+              </div>
+            ))}
+          </div>
+          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-4 rounded-full bg-black/50 backdrop-blur px-5 py-2.5 border border-white/10">
+            <span className="text-[10px] text-white/70">Entries</span>
+            <span
+              className="grid place-items-center h-8 w-8 rounded-full text-black font-bold"
+              style={{ background: "var(--mint)" }}
+            >
+              +
+            </span>
+            <span className="text-[10px] text-white/70">Calendar</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function Hero() {
   return (
     <section id="top" className="border-b border-border/60">
-      <div className="mx-auto grid max-w-6xl gap-12 px-6 py-20 md:grid-cols-2 md:py-28 md:gap-16 items-center md:pb-40">
+      <div className="mx-auto grid max-w-6xl gap-12 px-6 py-16 md:grid-cols-2 md:py-24 md:gap-16 items-center">
         <div>
-          <span className="inline-block text-xs font-medium uppercase tracking-[0.2em] text-primary mb-5">
-            For jiu-jitsu practitioners
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-4 py-1.5 text-xs font-semibold text-primary">
+            <span aria-hidden>★</span> Free Beta · iOS
           </span>
-          <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.05]">
-            Train with purpose,
+          <h1 className="mt-6 font-heading text-5xl sm:text-6xl md:text-7xl font-extrabold leading-[1.02] tracking-tight">
+            Train with
             <br />
-            <span className="text-muted-foreground">not just attendance.</span>
+            <span style={{ color: "var(--coral, oklch(0.72 0.16 35))" }}>
+              purpose
+            </span>
           </h1>
-          <p className="mt-6 max-w-md text-base text-muted-foreground leading-relaxed">
-            You train 3–5 times a week. Most apps tell you that you showed up.
-            Mat Mind helps you set goals, plan what to work on, and reflect honestly
-            against the plan.
+          <p className="mt-6 max-w-md text-lg text-muted-foreground leading-relaxed">
+            A beautifully crafted reflection journal for jiu-jitsu. Set goals,
+            plan tasks before class, and reflect honestly after — so every roll
+            adds up to real progress.
           </p>
-          <div className="mt-8 flex flex-wrap items-center gap-3">
-            <Button asChild size="lg" className="font-medium">
-              <a href="#waitlist">
-                Join the waitlist
-                <ArrowRight className="ml-1.5 h-4 w-4" />
-              </a>
-            </Button>
-            <Button asChild size="lg" variant="ghost" className="font-medium">
-              <a href="#how">See how it works</a>
+          <p className="mt-5 text-sm font-medium text-muted-foreground/80">
+            No ads. No subscriptions. No paywalls.
+          </p>
+          <div className="mt-8">
+            <Button
+              asChild
+              size="lg"
+              className="h-14 rounded-2xl px-7 text-base font-bold tracking-wide shadow-lg hover:opacity-90"
+              style={{
+                background: "var(--coral, oklch(0.72 0.16 35))",
+                color: "white",
+              }}
+            >
+              <a href="#waitlist">JOIN WAITLIST</a>
             </Button>
           </div>
         </div>
 
-        <div className="md:pl-6 relative">
-          <div className="relative rounded-2xl overflow-hidden border border-border">
-            <img
-              src={heroImg}
-              alt="A jiu-jitsu practitioner writing reflections in a notebook after class"
-              width={1280}
-              height={1280}
-              className="w-full h-[420px] md:h-[520px] object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-tr from-background/80 via-background/30 to-transparent" />
-          </div>
-          <div className="absolute -bottom-6 -left-4 md:-left-10 w-[78%] max-w-sm">
-            <GoalMock />
-          </div>
+        <div className="relative">
+          <HeroPhone />
         </div>
       </div>
     </section>
