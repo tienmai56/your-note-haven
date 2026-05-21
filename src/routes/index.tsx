@@ -152,8 +152,8 @@ function Hero() {
           </h1>
           <p className="mt-6 max-w-md text-base text-muted-foreground leading-relaxed">
             You train 3–5 times a week. Most apps tell you that you showed up.
-            Intentional Training Notes helps you set goals, plan what to work on, and
-            reflect honestly against the plan.
+            Mat Mind helps you set goals, plan what to work on, and reflect honestly
+            against the plan.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <Button asChild size="lg" className="font-medium">
