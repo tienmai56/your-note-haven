@@ -1,14 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import {
-  Target,
-  NotebookPen,
-  History,
-  Check,
-  Plus,
-  Flame,
-  ArrowRight,
-} from "lucide-react";
+import {} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -80,64 +72,6 @@ function Nav() {
   );
 }
 
-function GoalMock() {
-  return (
-    <div className="relative">
-      <div className="absolute -inset-8 rounded-3xl bg-primary/20 blur-3xl" aria-hidden />
-      <div className="relative rounded-2xl border border-border bg-card shadow-2xl overflow-hidden">
-        <div className="flex items-center justify-between border-b border-border px-5 py-3">
-          <div className="flex items-center gap-2">
-            <div className="h-2 w-2 rounded-full bg-primary" />
-            <span className="font-heading text-sm font-semibold">Leg Locks</span>
-          </div>
-          <span className="text-xs text-muted-foreground">Week 3</span>
-        </div>
-
-        <div className="px-5 py-4 space-y-3">
-          {[
-            { label: "Entry from half guard", count: 4, done: true },
-            { label: "Controlling two legs", count: 2, done: true },
-            { label: "Finishing mechanics", count: 1, done: false },
-          ].map((t) => (
-            <div
-              key={t.label}
-              className="flex items-center justify-between rounded-lg border border-border/70 bg-background/40 px-3 py-2.5"
-            >
-              <div className="flex items-center gap-3">
-                <div
-                  className={`grid place-items-center h-5 w-5 rounded border ${
-                    t.done
-                      ? "bg-primary border-primary text-primary-foreground"
-                      : "border-border"
-                  }`}
-                >
-                  {t.done && <Check className="h-3 w-3" strokeWidth={3} />}
-                </div>
-                <span className="text-sm">{t.label}</span>
-              </div>
-              <span className="text-xs text-muted-foreground tabular-nums">
-                {t.count}×
-              </span>
-            </div>
-          ))}
-
-          <div className="rounded-lg border border-primary/30 bg-primary/5 p-3">
-            <div className="flex items-center justify-between mb-1.5">
-              <span className="text-xs font-medium text-muted-foreground">
-                Tue · Reflection
-              </span>
-              <Flame className="h-3.5 w-3.5 text-primary" />
-            </div>
-            <p className="text-sm leading-relaxed">
-              Hit the entry twice in rolling, lost the second leg both times. Need to
-              cross-face earlier.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
 
 function HeroPhone() {
   return (
