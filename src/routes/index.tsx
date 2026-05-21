@@ -191,36 +191,49 @@ function Hero() {
 function Features() {
   const items = [
     {
-      icon: Target,
-      title: "Plan with intent",
-      body: "Break a goal into specific tasks. Schedule which days to work on each. Skip the vague 'just train hard.'",
+      emoji: "🎯",
+      title: "Set up Goals & Tasks",
+      body: "Break a goal into specific tasks. Schedule which days to work on each. Walk into class knowing exactly what you're hunting for.",
     },
     {
-      icon: NotebookPen,
-      title: "Reflect against the plan",
+      emoji: "📝",
+      title: "Reflect",
       body: "After class, capture what worked, where you got stuck, and how it felt. Tied to the session, not floating notes.",
     },
     {
-      icon: History,
-      title: "See the pattern over time",
-      body: "Every task has a timeline of planned days, completions, and reflections. The gap between intent and reality is the lesson.",
+      emoji: "💬",
+      title: "Get Feedback",
+      body: "See the gap between what you planned and what you actually did. Patterns over time become the lesson.",
+    },
+    {
+      emoji: "🔒",
+      title: "Completely Private",
+      body: "Your entries stay on your device. No accounts, no tracking, no ads. Protect your journal with Face ID or Touch ID.",
     },
   ];
 
   return (
-    <section className="border-b border-border/60">
-      <div className="mx-auto max-w-6xl px-6 py-20">
-        <div className="grid gap-6 md:grid-cols-3">
+    <section className="border-b border-border/60 bg-card/30">
+      <div className="mx-auto max-w-6xl px-6 py-20 md:py-24">
+        <div className="text-center max-w-2xl mx-auto mb-14">
+          <h2 className="font-heading text-3xl md:text-5xl font-bold tracking-tight">
+            What you can do with Mat Mind
+          </h2>
+          <p className="mt-4 text-muted-foreground text-base md:text-lg">
+            Everything you need for a meaningful training practice, nothing you don't.
+          </p>
+        </div>
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {items.map((f) => (
             <div
               key={f.title}
-              className="rounded-xl border border-border bg-card/60 p-6 transition-colors hover:border-primary/40"
+              className="rounded-2xl bg-background p-7 shadow-sm border border-border/40 transition-all hover:shadow-md hover:-translate-y-0.5"
             >
-              <div className="grid place-items-center h-10 w-10 rounded-md bg-primary/15 text-primary mb-5">
-                <f.icon className="h-5 w-5" />
+              <div className="text-3xl mb-5" aria-hidden>
+                {f.emoji}
               </div>
-              <h3 className="font-heading text-lg font-semibold mb-2">{f.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{f.body}</p>
+              <h3 className="font-heading text-xl font-bold mb-3">{f.title}</h3>
+              <p className="text-[15px] text-muted-foreground leading-relaxed">{f.body}</p>
             </div>
           ))}
         </div>
@@ -228,6 +241,7 @@ function Features() {
     </section>
   );
 }
+
 
 function Banner() {
   return (
