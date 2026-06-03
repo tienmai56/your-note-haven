@@ -339,27 +339,32 @@ function WhyIBuiltThis() {
 }
 
 function HowItWorks() {
-  const steps = [
+  const items = [
     {
-      n: "01",
-      title: "Set a goal",
-      body: "Pick a theme to improve — leg locks, guard retention, surviving from mount — and break it into specific tasks.",
+      emoji: "🎯",
+      title: "Set up Goals & Tasks",
+      body: "Define what you want to improve and break it into specific tasks. Schedule which days to drill each one so every class has a clear focus.",
     },
     {
-      n: "02",
-      title: "Plan your week",
-      body: "Schedule which tasks to hunt on which days. Walk into every class with a clear focus instead of winging it.",
+      emoji: "📝",
+      title: "Reflect",
+      body: "After class, capture what worked, where you got stuck, and what to adjust. Reflections are tied to the plan, not floating notes.",
     },
     {
-      n: "03",
-      title: "Reflect after class",
-      body: "Check off what you actually drilled, note what got stuck, and carry the adjustment into next session's plan.",
+      emoji: "💬",
+      title: "Get Feedback",
+      body: "Share a session with a coach or training partner and turn their input into the next week's plan.",
+    },
+    {
+      emoji: "🔒",
+      title: "Completely Private",
+      body: "Your plans and reflections stay on your device. No accounts, no tracking, no ads. Lock it with Face ID or Touch ID.",
     },
   ];
 
   return (
     <section id="how" className="border-b border-border/60">
-      <div className="mx-auto max-w-6xl px-6 py-20">
+      <div className="mx-auto max-w-6xl px-6 py-20 md:py-24">
         <div className="max-w-2xl mb-12">
           <span className="text-xs font-medium uppercase tracking-[0.2em] text-primary">
             How it works
@@ -368,14 +373,17 @@ function HowItWorks() {
             A planning and reflection loop that turns mat time into measurable progress.
           </h2>
         </div>
-        <div className="grid gap-8 md:grid-cols-3">
-          {steps.map((s) => (
-            <div key={s.n} className="relative">
-              <div className="font-heading text-5xl font-bold text-primary/30 mb-4 tabular-nums">
-                {s.n}
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {items.map((f) => (
+            <div
+              key={f.title}
+              className="rounded-2xl bg-card p-7 shadow-sm border border-border/40 transition-all hover:shadow-md hover:-translate-y-0.5"
+            >
+              <div className="text-3xl mb-5" aria-hidden>
+                {f.emoji}
               </div>
-              <h3 className="font-heading text-lg font-semibold mb-2">{s.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{s.body}</p>
+              <h3 className="font-heading text-xl font-bold mb-3">{f.title}</h3>
+              <p className="text-[15px] text-muted-foreground leading-relaxed">{f.body}</p>
             </div>
           ))}
         </div>
