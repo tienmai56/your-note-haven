@@ -302,6 +302,46 @@ function Banner() {
   );
 }
 
+function WhyIBuiltThis() {
+  return (
+    <section className="border-b border-border/60 bg-card/30">
+      <div className="mx-auto max-w-3xl px-6 py-20 md:py-24">
+        <span className="text-xs font-medium uppercase tracking-[0.2em] text-primary">
+          Why I built this
+        </span>
+        <h2 className="font-heading text-3xl md:text-4xl font-bold mt-3 leading-tight">
+          A hobbyist's tool for training that actually compounds.
+        </h2>
+        <div className="mt-8 space-y-5 text-[17px] text-muted-foreground leading-relaxed">
+          <p>
+            Being a hobbyist jiu-jitsu athlete myself, I've realized the most
+            effective way to get better is to walk into training intentionally —
+            with a goal.
+          </p>
+          <p>
+            But not all of us are pro athletes. You just don't have time to
+            properly plan every session. The good news: fun, effective training
+            can still happen if you're willing to spend a couple of seconds
+            tracking and reflecting after each one.
+          </p>
+          <p>
+            This app aims to make tracking, planning, and getting feedback{" "}
+            <span className="text-foreground font-medium">fun</span>. Share what
+            you're working on and where you're getting stuck with your gym
+            community or instructor through a quick Share Feedback — and get
+            real input back.
+          </p>
+          <p>
+            You can also set fun challenges for yourself — like hitting a
+            specific sweep or submission on a training partner — and actually
+            see whether all that planning is paying off on the mats.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function HowItWorks() {
   const steps = [
     {
