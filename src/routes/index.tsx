@@ -27,6 +27,7 @@ import appGoalsV2 from "@/assets/app-goals-v2.png.asset.json";
 import appPlanV2 from "@/assets/app-plan-v2.png.asset.json";
 import appShareV2 from "@/assets/app-share-v2.png.asset.json";
 import appBounty from "@/assets/app-bounty.png.asset.json";
+import appBountyUnlocked from "@/assets/app-bounty-unlocked.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
