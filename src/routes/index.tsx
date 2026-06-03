@@ -26,6 +26,7 @@ import appHero from "@/assets/app-hero.png.asset.json";
 import appGoalsV2 from "@/assets/app-goals-v2.png.asset.json";
 import appPlanV2 from "@/assets/app-plan-v2.png.asset.json";
 import appShareV2 from "@/assets/app-share-v2.png.asset.json";
+import appBounty from "@/assets/app-bounty.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -433,6 +434,12 @@ function PreviewMockups() {
       caption: "Reflect & share — review the session, ask for feedback.",
       offset: "md:translate-y-8",
     },
+    {
+      src: appBounty.url,
+      alt: "New Bounty screen setting a target to hit seatbelt grip maintenance on Francis",
+      caption: "Bounty hunt — set a fun target for live rounds.",
+      offset: "",
+    },
   ];
 
   return (
@@ -447,7 +454,7 @@ function PreviewMockups() {
           </h2>
         </div>
 
-        <div className="relative grid gap-10 md:grid-cols-3 md:gap-6 items-start justify-items-center">
+        <div className="relative grid gap-10 md:grid-cols-2 lg:grid-cols-4 md:gap-6 items-start justify-items-center">
           {shots.map((s) => (
             <figure key={s.caption} className={`w-full max-w-[300px] ${s.offset}`}>
               <img
