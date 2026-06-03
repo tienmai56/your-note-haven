@@ -321,23 +321,20 @@ function WhyIBuiltThis() {
         </h2>
         <div className="mt-8 space-y-5 text-[17px] text-muted-foreground leading-relaxed">
           <p>
-            As a fellow BJJ hobbyist, I noticed that my best nights on the mat
-            always happened when I walked in with a specific goal.
+            As a hobbyist jiu-jitsu athlete myself, I noticed that the fastest
+            way to get better is to step onto the mats with a specific goal.
+            With an intention.
           </p>
           <p>
-            But who has the time to play full-time coach for themselves? We've
-            got a capitalist grind to survive. We can't all train like world
-            champions, but we can still have fun and see serious progress.
+            But let's be real, we've got a capitalist grind to survive. We
+            can't all train like world champions, but we can still have fun
+            and see serious progress!
           </p>
+          <p>Mat Mind takes the headache out of intentional training.</p>
           <p>
-            Mat Mind takes the headache out of tracking. It lets you break down
-            goals into quick daily tasks, track what's working, and even set
-            fun bounties — like hunting for a specific sub during live rounds.
-          </p>
-          <p>
-            You can also share a quick Feedback Card with a summary of what
-            you're stuck on to your coach or training partners to get their
-            input.
+            It lets you break down goals into quick daily tasks, track what's
+            working, get quick feedback from coaches, and even set fun
+            bounties.
           </p>
         </div>
       </div>
