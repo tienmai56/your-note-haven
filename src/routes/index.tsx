@@ -137,7 +137,7 @@ function BetaDialog({ trigger }: { trigger: React.ReactNode }) {
               size="lg"
               className="h-12 rounded-xl font-bold tracking-wide hover:opacity-90"
               style={{
-                background: "var(--coral, oklch(0.72 0.16 35))",
+                background: "var(--coral, oklch(0.62 0.20 295))",
                 color: "white",
               }}
             >
@@ -181,7 +181,7 @@ function Hero() {
           <h1 className="mt-6 font-heading text-5xl sm:text-6xl md:text-7xl font-extrabold leading-[1.02] tracking-tight">
             Train with
             <br />
-            <span style={{ color: "var(--coral, oklch(0.72 0.16 35))" }}>
+            <span style={{ color: "var(--coral, oklch(0.62 0.20 295))" }}>
               purpose
             </span>
           </h1>
@@ -200,7 +200,7 @@ function Hero() {
                   size="lg"
                   className="h-14 rounded-2xl px-7 text-base font-bold tracking-wide shadow-lg hover:opacity-90"
                   style={{
-                    background: "var(--coral, oklch(0.72 0.16 35))",
+                    background: "var(--coral, oklch(0.62 0.20 295))",
                     color: "white",
                   }}
                 >
