@@ -408,25 +408,30 @@ function FAQ() {
   const items = [
     {
       q: "Is it free?",
-      a: "Free during the beta. We'll introduce a low-cost pro tier later for cloud sync and history export.",
+      a: "Yes — Mat Mind is completely free. No subscriptions, no paywalls, no ads.",
+    },
+    {
+      q: "Where is my data stored?",
+      a: "Everything lives locally on your device. Your plans and reflections never leave your phone unless you choose to share them.",
+    },
+    {
+      q: "Who is it for?",
+      a: "Anyone who trains — hobbyists who want training to feel fun and intentional, and professional athletes who need a sharper, more effective practice. The goal is the same: make every mat session count.",
     },
     {
       q: "When does it launch?",
-      a: "Closed beta in the coming weeks. Waitlist members get first access.",
+      a: "Closed beta in the coming weeks. Beta users get first access.",
     },
     {
       q: "iOS or Android?",
       a: "iOS first. Android is on the roadmap once the iOS app is stable.",
     },
     {
-      q: "Does my data sync between devices?",
-      a: "v1 stores data locally on-device. iCloud sync is planned for an early update.",
-    },
-    {
       q: "Is there a web version?",
-      a: "Not at launch. The reflection habit works best as a quick mobile capture.",
+      a: "Not at launch. Planning and reflection work best as a quick mobile capture before and after class.",
     },
   ];
+
   return (
     <section className="border-b border-border/60">
       <div className="mx-auto max-w-3xl px-6 py-20">
