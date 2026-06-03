@@ -436,8 +436,9 @@ function PreviewMockups() {
                 width={1276}
                 height={2204}
                 loading="lazy"
-                className="w-full h-auto drop-shadow-2xl"
+                className="w-full h-auto rounded-[2.5rem] drop-shadow-2xl ring-1 ring-border/40"
               />
+
               <figcaption className="mt-5 text-center text-sm text-muted-foreground">
                 {s.caption}
               </figcaption>
