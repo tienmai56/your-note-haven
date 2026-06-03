@@ -89,11 +89,27 @@ function Nav() {
 function BetaDialog({ trigger }: { trigger: React.ReactNode }) {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const onSubmit = (e: React.FormEvent) => {
+  const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email || !email.includes("@")) {
+    const trimmed = email.trim();
+    if (!trimmed || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(trimmed)) {
       toast.error("Please enter a valid email.");
+      return;
+    }
+    setLoading(true);
+    const { error } = await supabase
+      .from("waitlist_signups")
+      .insert({ email: trimmed, source: "hero_dialog" });
+    setLoading(false);
+    if (error) {
+      if (error.code === "23505") {
+        setSubmitted(true);
+        toast.success("You're already on the list — we'll be in touch.");
+        return;
+      }
+      toast.error("Something went wrong. Please try again.");
       return;
     }
     setSubmitted(true);
