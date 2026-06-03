@@ -372,6 +372,11 @@ function HowItWorks() {
       body: "Share a session with a coach or training partner and turn their input into the next week's plan.",
     },
     {
+      emoji: "🎉",
+      title: "Make it fun!",
+      body: "Set a fun bounty after meeting your training plan and reflection for a period of time.",
+    },
+    {
       emoji: "🔒",
       title: "Completely Private",
       body: "Your plans and reflections stay on your device. No accounts, no tracking, no ads. Lock it with Face ID or Touch ID.",
