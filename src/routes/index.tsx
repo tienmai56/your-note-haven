@@ -161,11 +161,11 @@ function HeroPhone() {
     <div className="relative mx-auto w-[300px] sm:w-[360px]">
       <div className="absolute -inset-12 rounded-[3rem] bg-primary/20 blur-3xl" aria-hidden />
       <img
-        src={appGoals}
-        alt="Mat Mind app showing active jiu-jitsu goals: Pin Side Control, Mount Escape, Over Under Pass"
+        src={appHero.url}
+        alt="Mat Mind home screen showing a 2 week streak, next session Takedowns, and latest reflection on Back Control"
         width={1276}
         height={2204}
-        className="relative w-full h-auto drop-shadow-2xl"
+        className="relative w-full h-auto rounded-[2.5rem] drop-shadow-2xl ring-1 ring-border/40"
       />
     </div>
   );
