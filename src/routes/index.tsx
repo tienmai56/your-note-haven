@@ -9,6 +9,14 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import { Toaster } from "@/components/ui/sonner";
 import { toast } from "sonner";
 import disciplineImg from "@/assets/section-discipline.jpg";
@@ -61,16 +69,90 @@ function Nav() {
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/70 backdrop-blur">
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-6">
         <Wordmark />
-        <a
-          href="#waitlist"
-          className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-        >
-          Join waitlist →
-        </a>
+        <BetaDialog
+          trigger={
+            <button
+              type="button"
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Become a Beta user →
+            </button>
+          }
+        />
       </div>
     </header>
   );
 }
+
+function BetaDialog({ trigger }: { trigger: React.ReactNode }) {
+  const [email, setEmail] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+
+  const onSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email || !email.includes("@")) {
+      toast.error("Please enter a valid email.");
+      return;
+    }
+    setSubmitted(true);
+    toast.success("You're on the list. We'll be in touch.");
+  };
+
+  return (
+    <Dialog
+      onOpenChange={(open) => {
+        if (!open) {
+          setEmail("");
+          setSubmitted(false);
+        }
+      }}
+    >
+      <DialogTrigger asChild>{trigger}</DialogTrigger>
+      <DialogContent className="sm:max-w-md">
+        <DialogHeader>
+          <DialogTitle className="font-heading text-2xl">
+            Become a Beta user
+          </DialogTitle>
+          <DialogDescription>
+            Drop your email and we'll send your invite when the beta opens.
+          </DialogDescription>
+        </DialogHeader>
+        {submitted ? (
+          <p className="text-sm text-muted-foreground py-2">
+            You're on the list. We'll be in touch soon.
+          </p>
+        ) : (
+          <form onSubmit={onSubmit} className="flex flex-col gap-3 pt-2">
+            <Input
+              type="email"
+              required
+              placeholder="jane.doe@example.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="h-11"
+              autoFocus
+            />
+            <Button
+              type="submit"
+              size="lg"
+              className="h-12 rounded-xl font-bold tracking-wide hover:opacity-90"
+              style={{
+                background: "var(--coral, oklch(0.72 0.16 35))",
+                color: "white",
+              }}
+            >
+              Request beta access
+            </Button>
+            <p className="text-xs text-muted-foreground text-center">
+              No spam. One email when the beta opens.
+            </p>
+          </form>
+        )}
+      </DialogContent>
+    </Dialog>
+  );
+}
+
 
 
 function HeroPhone() {
@@ -112,17 +194,20 @@ function Hero() {
             No ads. No subscriptions. No paywalls.
           </p>
           <div className="mt-8">
-            <Button
-              asChild
-              size="lg"
-              className="h-14 rounded-2xl px-7 text-base font-bold tracking-wide shadow-lg hover:opacity-90"
-              style={{
-                background: "var(--coral, oklch(0.72 0.16 35))",
-                color: "white",
-              }}
-            >
-              <a href="#waitlist">JOIN WAITLIST</a>
-            </Button>
+            <BetaDialog
+              trigger={
+                <Button
+                  size="lg"
+                  className="h-14 rounded-2xl px-7 text-base font-bold tracking-wide shadow-lg hover:opacity-90"
+                  style={{
+                    background: "var(--coral, oklch(0.72 0.16 35))",
+                    color: "white",
+                  }}
+                >
+                  BECOME A BETA USER
+                </Button>
+              }
+            />
           </div>
         </div>
 
