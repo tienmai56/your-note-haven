@@ -22,8 +22,9 @@ import { toast } from "sonner";
 import disciplineImg from "@/assets/section-discipline.jpg";
 import logo from "@/assets/mat-mind-logo.png";
 import appGoals from "@/assets/app-goals.png";
-import appPlan from "@/assets/app-plan.png";
-import appShare from "@/assets/app-share.png";
+import appGoalsV2 from "@/assets/app-goals-v2.png.asset.json";
+import appPlanV2 from "@/assets/app-plan-v2.png.asset.json";
+import appShareV2 from "@/assets/app-share-v2.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
