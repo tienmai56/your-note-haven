@@ -153,13 +153,14 @@ function BetaDialog({ trigger }: { trigger: React.ReactNode }) {
             <Button
               type="submit"
               size="lg"
-              className="h-12 rounded-xl font-bold tracking-wide hover:opacity-90"
+              disabled={loading}
+              className="h-12 rounded-xl font-bold tracking-wide hover:opacity-90 disabled:opacity-60"
               style={{
                 background: "var(--coral, oklch(0.62 0.20 295))",
                 color: "white",
               }}
             >
-              Request beta access
+              {loading ? "Submitting…" : "Request beta access"}
             </Button>
             <p className="text-xs text-muted-foreground text-center">
               No spam. One email when the beta opens.
