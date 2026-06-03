@@ -9,6 +9,14 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import { Toaster } from "@/components/ui/sonner";
 import { toast } from "sonner";
 import disciplineImg from "@/assets/section-discipline.jpg";
@@ -61,12 +69,16 @@ function Nav() {
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/70 backdrop-blur">
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-6">
         <Wordmark />
-        <a
-          href="#waitlist"
-          className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-        >
-          Join waitlist →
-        </a>
+        <BetaDialog
+          trigger={
+            <button
+              type="button"
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Become a Beta user →
+            </button>
+          }
+        />
       </div>
     </header>
   );
@@ -112,17 +124,20 @@ function Hero() {
             No ads. No subscriptions. No paywalls.
           </p>
           <div className="mt-8">
-            <Button
-              asChild
-              size="lg"
-              className="h-14 rounded-2xl px-7 text-base font-bold tracking-wide shadow-lg hover:opacity-90"
-              style={{
-                background: "var(--coral, oklch(0.72 0.16 35))",
-                color: "white",
-              }}
-            >
-              <a href="#waitlist">JOIN WAITLIST</a>
-            </Button>
+            <BetaDialog
+              trigger={
+                <Button
+                  size="lg"
+                  className="h-14 rounded-2xl px-7 text-base font-bold tracking-wide shadow-lg hover:opacity-90"
+                  style={{
+                    background: "var(--coral, oklch(0.72 0.16 35))",
+                    color: "white",
+                  }}
+                >
+                  BECOME A BETA USER
+                </Button>
+              }
+            />
           </div>
         </div>
 
