@@ -22,8 +22,9 @@ import { toast } from "sonner";
 import disciplineImg from "@/assets/section-discipline.jpg";
 import logo from "@/assets/mat-mind-logo.png";
 import appGoals from "@/assets/app-goals.png";
-import appPlan from "@/assets/app-plan.png";
-import appShare from "@/assets/app-share.png";
+import appGoalsV2 from "@/assets/app-goals-v2.png.asset.json";
+import appPlanV2 from "@/assets/app-plan-v2.png.asset.json";
+import appShareV2 from "@/assets/app-share-v2.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -395,20 +396,20 @@ function HowItWorks() {
 function PreviewMockups() {
   const shots = [
     {
-      src: appGoals,
-      alt: "Active Goals screen with Pin Side Control, Mount Escape, Over Under Pass",
+      src: appGoalsV2.url,
+      alt: "Active Goals screen with Guard Retention and Sweeps, broken into specific tasks",
       caption: "Goals — break a theme into specific tasks.",
       offset: "md:translate-y-8",
     },
     {
-      src: appPlan,
-      alt: "Plan screen with calendar and reflection on Pin Side Control",
+      src: appPlanV2.url,
+      alt: "Plan screen showing June calendar with scheduled training and a Guard Retention session",
       caption: "Plan — schedule what to hunt for each class.",
       offset: "",
     },
     {
-      src: appShare,
-      alt: "Share preview formatted as a letter to a training partner asking for feedback",
+      src: appShareV2.url,
+      alt: "Share preview formatted as a letter to training partners asking for feedback on Back Control",
       caption: "Reflect & share — review the session, ask for feedback.",
       offset: "md:translate-y-8",
     },
