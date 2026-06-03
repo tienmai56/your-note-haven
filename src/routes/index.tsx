@@ -21,7 +21,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { toast } from "sonner";
 import disciplineImg from "@/assets/section-discipline.jpg";
 import logo from "@/assets/mat-mind-logo.png";
-import appGoals from "@/assets/app-goals.png";
+import appHero from "@/assets/app-hero.png.asset.json";
 import appGoalsV2 from "@/assets/app-goals-v2.png.asset.json";
 import appPlanV2 from "@/assets/app-plan-v2.png.asset.json";
 import appShareV2 from "@/assets/app-share-v2.png.asset.json";
