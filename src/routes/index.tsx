@@ -422,6 +422,12 @@ function PreviewMockups() {
       caption: "Reflect & share — review the session, ask for feedback.",
       offset: "md:translate-y-8",
     },
+    {
+      src: appBountyUnlocked.url,
+      alt: "Home screen showing a 2 week streak with a Bounty Unlocked card prompting to set a challenge",
+      caption: "Bounty unlocked — turn consistency into a fun challenge.",
+      offset: "",
+    },
   ];
 
   return (
