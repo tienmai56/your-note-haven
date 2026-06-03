@@ -69,7 +69,7 @@
   --accent: oklch(0.78 0.10 180);              /* mint-ish accent */
   --accent-foreground: oklch(0.28 0.015 50);
   --mint: oklch(0.78 0.10 180);                /* #5EC4B6 mint */
-  --coral: oklch(0.74 0.13 30);                /* #F28B82 coral */
+  --coral: oklch(0.62 0.20 295);               /* purple (replaces coral) */
   --destructive: oklch(0.62 0.20 25);
   --destructive-foreground: oklch(0.98 0.005 75);
   --border: oklch(0.28 0.015 50 / 10%);
@@ -106,7 +106,7 @@
   --accent: oklch(0.78 0.10 180);
   --accent-foreground: oklch(0.18 0.01 50);
   --mint: oklch(0.78 0.10 180);
-  --coral: oklch(0.74 0.13 30);
+  --coral: oklch(0.70 0.20 295);
   --destructive: oklch(0.7 0.19 25);
   --destructive-foreground: oklch(0.98 0.005 75);
   --border: oklch(1 0 0 / 10%);
