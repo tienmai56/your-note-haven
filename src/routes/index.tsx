@@ -20,17 +20,17 @@ import appShare from "@/assets/app-share.png";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Mat Mind — Train BJJ with purpose" },
+      { title: "Mat Mind — Plan and reflect on your BJJ training" },
       {
         name: "description",
         content:
-          "A reflection journal for jiu-jitsu practitioners. Set goals, plan tasks before class, and reflect against them after. Train with intention, not just attendance.",
+          "A training planner and reflection journal for jiu-jitsu. Set goals, plan what to work on before each class, then reflect after. Train with intention, not just attendance.",
       },
-      { property: "og:title", content: "Mat Mind — Train BJJ with purpose" },
+      { property: "og:title", content: "Mat Mind — Plan and reflect on your BJJ training" },
       {
         property: "og:description",
         content:
-          "Set goals, plan tasks before class, and reflect after. Train with intention, not just attendance.",
+          "Plan what to work on before class, reflect after. Train with intention, not just attendance.",
       },
       { property: "og:url", content: "/" },
     ],
@@ -104,9 +104,9 @@ function Hero() {
             </span>
           </h1>
           <p className="mt-6 max-w-md text-lg text-muted-foreground leading-relaxed">
-            A beautifully crafted reflection journal for jiu-jitsu. Set goals,
-            plan tasks before class, and reflect honestly after — so every roll
-            adds up to real progress.
+            Plan your training before class, then reflect on it after.
+            Mat Mind helps you turn every session into deliberate practice —
+            so mat time actually compounds into progress.
           </p>
           <p className="mt-5 text-sm font-medium text-muted-foreground/80">
             No ads. No subscriptions. No paywalls.
@@ -139,22 +139,22 @@ function Features() {
     {
       emoji: "🎯",
       title: "Set up Goals & Tasks",
-      body: "Break a goal into specific tasks. Schedule which days to work on each. Walk into class knowing exactly what you're hunting for.",
+      body: "Define what you want to improve and break it into specific tasks. Schedule which days to drill each one so every class has a clear focus.",
     },
     {
       emoji: "📝",
       title: "Reflect",
-      body: "After class, capture what worked, where you got stuck, and how it felt. Tied to the session, not floating notes.",
+      body: "After class, capture what worked, where you got stuck, and what to adjust. Reflections are tied to the plan, not floating notes.",
     },
     {
       emoji: "💬",
       title: "Get Feedback",
-      body: "See the gap between what you planned and what you actually did. Patterns over time become the lesson.",
+      body: "Share a session with a coach or training partner and turn their input into the next week's plan.",
     },
     {
       emoji: "🔒",
       title: "Completely Private",
-      body: "Your entries stay on your device. No accounts, no tracking, no ads. Protect your journal with Face ID or Touch ID.",
+      body: "Your plans and reflections stay on your device. No accounts, no tracking, no ads. Lock it with Face ID or Touch ID.",
     },
   ];
 
@@ -163,10 +163,10 @@ function Features() {
       <div className="mx-auto max-w-6xl px-6 py-20 md:py-24">
         <div className="text-center max-w-2xl mx-auto mb-14">
           <h2 className="font-heading text-3xl md:text-5xl font-bold tracking-tight">
-            What you can do with Mat Mind
+            Plan, train, reflect — on repeat
           </h2>
           <p className="mt-4 text-muted-foreground text-base md:text-lg">
-            Everything you need for a meaningful training practice, nothing you don't.
+            Everything you need to plan your training and learn from every session.
           </p>
         </div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -222,17 +222,17 @@ function HowItWorks() {
     {
       n: "01",
       title: "Set a goal",
-      body: "Pick a theme you want to improve — leg locks, guard retention, surviving from mount. Break it into specific tasks.",
+      body: "Pick a theme to improve — leg locks, guard retention, surviving from mount — and break it into specific tasks.",
     },
     {
       n: "02",
-      title: "Plan the week",
-      body: "Schedule which tasks to work on which days. Walk into class knowing what you're hunting for.",
+      title: "Plan your week",
+      body: "Schedule which tasks to hunt on which days. Walk into every class with a clear focus instead of winging it.",
     },
     {
       n: "03",
       title: "Reflect after class",
-      body: "Check off what you actually drilled. Note where you got stuck. Carry the adjustment into next session.",
+      body: "Check off what you actually drilled, note what got stuck, and carry the adjustment into next session's plan.",
     },
   ];
 
@@ -244,7 +244,7 @@ function HowItWorks() {
             How it works
           </span>
           <h2 className="font-heading text-3xl md:text-4xl font-bold mt-3">
-            A loop that turns mat time into measurable progress.
+            A planning and reflection loop that turns mat time into measurable progress.
           </h2>
         </div>
         <div className="grid gap-8 md:grid-cols-3">
@@ -274,13 +274,13 @@ function PreviewMockups() {
     {
       src: appPlan,
       alt: "Plan screen with calendar and reflection on Pin Side Control",
-      caption: "Plan — schedule what to hunt for, then reflect.",
+      caption: "Plan — schedule what to hunt for each class.",
       offset: "",
     },
     {
       src: appShare,
       alt: "Share preview formatted as a letter to a training partner asking for feedback",
-      caption: "Share — ask a partner or coach for feedback.",
+      caption: "Reflect & share — review the session, ask for feedback.",
       offset: "md:translate-y-8",
     },
   ];
@@ -293,7 +293,7 @@ function PreviewMockups() {
             Inside the app
           </span>
           <h2 className="font-heading text-3xl md:text-4xl font-bold mt-3">
-            One quiet screen for goals. Another for planning. Another for honesty.
+            One screen to plan. One to train against. One to reflect honestly.
           </h2>
         </div>
 
@@ -389,7 +389,7 @@ function Waitlist() {
     <section id="waitlist" className="border-b border-border/60">
       <div className="mx-auto max-w-3xl px-6 py-24 text-center">
         <h2 className="font-heading text-3xl md:text-5xl font-bold leading-tight">
-          Start training with intention.
+          Plan your training. Reflect on every roll.
         </h2>
         <p className="mt-4 text-muted-foreground max-w-lg mx-auto">
           Join the waitlist and we'll let you know when the beta opens.
