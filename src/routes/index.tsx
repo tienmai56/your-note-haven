@@ -132,7 +132,7 @@ function BetaDialog({ trigger }: { trigger: React.ReactNode }) {
             Become a Beta user
           </DialogTitle>
           <DialogDescription>
-            Drop your email and we'll send your invite when the beta opens.
+            Drop your email and we'll send your invite to become a beta user. No spam. No advertisement
           </DialogDescription>
         </DialogHeader>
         {submitted ? (
