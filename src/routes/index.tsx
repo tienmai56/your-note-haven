@@ -434,6 +434,12 @@ function PreviewMockups() {
       caption: "Reflect & share — review the session, ask for feedback.",
       offset: "md:translate-y-8",
     },
+    {
+      src: appBounty.url,
+      alt: "New Bounty screen setting a target to hit seatbelt grip maintenance on Francis",
+      caption: "Bounty hunt — set a fun target for live rounds.",
+      offset: "",
+    },
   ];
 
   return (
