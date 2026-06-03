@@ -454,7 +454,7 @@ function PreviewMockups() {
           </h2>
         </div>
 
-        <div className="relative grid gap-10 md:grid-cols-3 md:gap-6 items-start justify-items-center">
+        <div className="relative grid gap-10 md:grid-cols-2 lg:grid-cols-4 md:gap-6 items-start justify-items-center">
           {shots.map((s) => (
             <figure key={s.caption} className={`w-full max-w-[300px] ${s.offset}`}>
               <img
