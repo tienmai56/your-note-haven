@@ -18,6 +18,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Toaster } from "@/components/ui/sonner";
+import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import disciplineImg from "@/assets/section-discipline.jpg";
 import logo from "@/assets/mat-mind-logo.png";
@@ -88,11 +89,27 @@ function Nav() {
 function BetaDialog({ trigger }: { trigger: React.ReactNode }) {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const onSubmit = (e: React.FormEvent) => {
+  const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email || !email.includes("@")) {
+    const trimmed = email.trim();
+    if (!trimmed || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(trimmed)) {
       toast.error("Please enter a valid email.");
+      return;
+    }
+    setLoading(true);
+    const { error } = await supabase
+      .from("waitlist_signups")
+      .insert({ email: trimmed, source: "hero_dialog" });
+    setLoading(false);
+    if (error) {
+      if (error.code === "23505") {
+        setSubmitted(true);
+        toast.success("You're already on the list — we'll be in touch.");
+        return;
+      }
+      toast.error("Something went wrong. Please try again.");
       return;
     }
     setSubmitted(true);
@@ -136,13 +153,14 @@ function BetaDialog({ trigger }: { trigger: React.ReactNode }) {
             <Button
               type="submit"
               size="lg"
-              className="h-12 rounded-xl font-bold tracking-wide hover:opacity-90"
+              disabled={loading}
+              className="h-12 rounded-xl font-bold tracking-wide hover:opacity-90 disabled:opacity-60"
               style={{
                 background: "var(--coral, oklch(0.62 0.20 295))",
                 color: "white",
               }}
             >
-              Request beta access
+              {loading ? "Submitting…" : "Request beta access"}
             </Button>
             <p className="text-xs text-muted-foreground text-center">
               No spam. One email when the beta opens.
@@ -509,15 +527,30 @@ function FAQ() {
 function Waitlist() {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const onSubmit = (e: React.FormEvent) => {
+  const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email || !email.includes("@")) {
+    const trimmed = email.trim();
+    if (!trimmed || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(trimmed)) {
       toast.error("Please enter a valid email.");
       return;
     }
+    setLoading(true);
+    const { error } = await supabase
+      .from("waitlist_signups")
+      .insert({ email: trimmed, source: "footer_waitlist" });
+    setLoading(false);
+    if (error && error.code !== "23505") {
+      toast.error("Something went wrong. Please try again.");
+      return;
+    }
     setSubmitted(true);
-    toast.success("You're on the list. We'll be in touch.");
+    toast.success(
+      error?.code === "23505"
+        ? "You're already on the list — we'll be in touch."
+        : "You're on the list. We'll be in touch.",
+    );
     setEmail("");
   };
 
@@ -542,8 +575,8 @@ function Waitlist() {
             onChange={(e) => setEmail(e.target.value)}
             className="h-11 bg-card border-border"
           />
-          <Button type="submit" size="lg" className="font-medium">
-            {submitted ? "You're in" : "Join waitlist"}
+          <Button type="submit" size="lg" disabled={loading} className="font-medium disabled:opacity-60">
+            {loading ? "Submitting…" : submitted ? "You're in" : "Join waitlist"}
           </Button>
         </form>
         <p className="mt-3 text-xs text-muted-foreground">
