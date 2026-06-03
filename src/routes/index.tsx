@@ -575,8 +575,8 @@ function Waitlist() {
             onChange={(e) => setEmail(e.target.value)}
             className="h-11 bg-card border-border"
           />
-          <Button type="submit" size="lg" className="font-medium">
-            {submitted ? "You're in" : "Join waitlist"}
+          <Button type="submit" size="lg" disabled={loading} className="font-medium disabled:opacity-60">
+            {loading ? "Submitting…" : submitted ? "You're in" : "Join waitlist"}
           </Button>
         </form>
         <p className="mt-3 text-xs text-muted-foreground">
