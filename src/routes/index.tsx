@@ -569,6 +569,8 @@ function Landing() {
         <Hero />
         <Features />
         <Banner />
+        <Banner />
+        <WhyIBuiltThis />
         <HowItWorks />
         <PreviewMockups />
         <FAQ />
