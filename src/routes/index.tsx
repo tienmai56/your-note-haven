@@ -314,27 +314,23 @@ function WhyIBuiltThis() {
         </h2>
         <div className="mt-8 space-y-5 text-[17px] text-muted-foreground leading-relaxed">
           <p>
-            Being a hobbyist jiu-jitsu athlete myself, I've realized the most
-            effective way to get better is to walk into training intentionally —
-            with a goal.
+            As a fellow BJJ hobbyist, I noticed that my best nights on the mat
+            always happened when I walked in with a specific goal.
           </p>
           <p>
-            But not all of us are pro athletes. You just don't have time to
-            properly plan every session. The good news: fun, effective training
-            can still happen if you're willing to spend a couple of seconds
-            tracking and reflecting after each one.
+            But who has the time to play full-time coach for themselves? We've
+            got a capitalist grind to survive. We can't all train like world
+            champions, but we can still have fun and see serious progress.
           </p>
           <p>
-            This app aims to make tracking, planning, and getting feedback{" "}
-            <span className="text-foreground font-medium">fun</span>. Share what
-            you're working on and where you're getting stuck with your gym
-            community or instructor through a quick Share Feedback — and get
-            real input back.
+            Mat Mind takes the headache out of tracking. It lets you break down
+            goals into quick daily tasks, track what's working, and even set
+            fun bounties — like hunting for a specific sub during live rounds.
           </p>
           <p>
-            You can also set fun challenges for yourself — like hitting a
-            specific sweep or submission on a training partner — and actually
-            see whether all that planning is paying off on the mats.
+            You can also share a quick Feedback Card with a summary of what
+            you're stuck on to your coach or training partners to get their
+            input.
           </p>
         </div>
       </div>
