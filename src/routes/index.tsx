@@ -70,18 +70,8 @@ function Wordmark() {
 function Nav() {
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/70 backdrop-blur">
-      <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-6">
+      <div className="mx-auto flex h-14 max-w-6xl items-center px-6">
         <Wordmark />
-        <BetaDialog
-          trigger={
-            <button
-              type="button"
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Become a Beta user →
-            </button>
-          }
-        />
       </div>
     </header>
   );
