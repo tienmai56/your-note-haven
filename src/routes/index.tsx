@@ -21,7 +21,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { toast } from "sonner";
 import disciplineImg from "@/assets/section-discipline.jpg";
 import logo from "@/assets/mat-mind-logo.png";
-import appGoals from "@/assets/app-goals.png";
+import appHero from "@/assets/app-hero.png.asset.json";
 import appGoalsV2 from "@/assets/app-goals-v2.png.asset.json";
 import appPlanV2 from "@/assets/app-plan-v2.png.asset.json";
 import appShareV2 from "@/assets/app-share-v2.png.asset.json";
@@ -161,11 +161,11 @@ function HeroPhone() {
     <div className="relative mx-auto w-[300px] sm:w-[360px]">
       <div className="absolute -inset-12 rounded-[3rem] bg-primary/20 blur-3xl" aria-hidden />
       <img
-        src={appGoals}
-        alt="Mat Mind app showing active jiu-jitsu goals: Pin Side Control, Mount Escape, Over Under Pass"
+        src={appHero.url}
+        alt="Mat Mind home screen showing a 2 week streak, next session Takedowns, and latest reflection on Back Control"
         width={1276}
         height={2204}
-        className="relative w-full h-auto drop-shadow-2xl"
+        className="relative w-full h-auto rounded-[2.5rem] drop-shadow-2xl ring-1 ring-border/40"
       />
     </div>
   );
