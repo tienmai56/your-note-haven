@@ -18,6 +18,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Toaster } from "@/components/ui/sonner";
+import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import disciplineImg from "@/assets/section-discipline.jpg";
 import logo from "@/assets/mat-mind-logo.png";
