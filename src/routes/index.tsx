@@ -84,6 +84,76 @@ function Nav() {
   );
 }
 
+function BetaDialog({ trigger }: { trigger: React.ReactNode }) {
+  const [email, setEmail] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+
+  const onSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email || !email.includes("@")) {
+      toast.error("Please enter a valid email.");
+      return;
+    }
+    setSubmitted(true);
+    toast.success("You're on the list. We'll be in touch.");
+  };
+
+  return (
+    <Dialog
+      onOpenChange={(open) => {
+        if (!open) {
+          setEmail("");
+          setSubmitted(false);
+        }
+      }}
+    >
+      <DialogTrigger asChild>{trigger}</DialogTrigger>
+      <DialogContent className="sm:max-w-md">
+        <DialogHeader>
+          <DialogTitle className="font-heading text-2xl">
+            Become a Beta user
+          </DialogTitle>
+          <DialogDescription>
+            Drop your email and we'll send your invite when the beta opens.
+          </DialogDescription>
+        </DialogHeader>
+        {submitted ? (
+          <p className="text-sm text-muted-foreground py-2">
+            You're on the list. We'll be in touch soon.
+          </p>
+        ) : (
+          <form onSubmit={onSubmit} className="flex flex-col gap-3 pt-2">
+            <Input
+              type="email"
+              required
+              placeholder="jane.doe@example.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="h-11"
+              autoFocus
+            />
+            <Button
+              type="submit"
+              size="lg"
+              className="h-12 rounded-xl font-bold tracking-wide hover:opacity-90"
+              style={{
+                background: "var(--coral, oklch(0.72 0.16 35))",
+                color: "white",
+              }}
+            >
+              Request beta access
+            </Button>
+            <p className="text-xs text-muted-foreground text-center">
+              No spam. One email when the beta opens.
+            </p>
+          </form>
+        )}
+      </DialogContent>
+    </Dialog>
+  );
+}
+
+
 
 function HeroPhone() {
   return (
