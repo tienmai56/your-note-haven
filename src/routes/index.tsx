@@ -563,8 +563,6 @@ function Landing() {
       <Nav />
       <main>
         <Hero />
-        <Features />
-        <Banner />
         <WhyIBuiltThis />
         <HowItWorks />
         <PreviewMockups />
