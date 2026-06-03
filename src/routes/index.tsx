@@ -162,9 +162,6 @@ function BetaDialog({ trigger }: { trigger: React.ReactNode }) {
             >
               {loading ? "Submitting…" : "Request beta access"}
             </Button>
-            <p className="text-xs text-muted-foreground text-center">
-              No spam. One email when the beta opens.
-            </p>
           </form>
         )}
       </DialogContent>
