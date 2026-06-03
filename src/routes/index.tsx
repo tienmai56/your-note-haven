@@ -527,15 +527,30 @@ function FAQ() {
 function Waitlist() {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const onSubmit = (e: React.FormEvent) => {
+  const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email || !email.includes("@")) {
+    const trimmed = email.trim();
+    if (!trimmed || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(trimmed)) {
       toast.error("Please enter a valid email.");
       return;
     }
+    setLoading(true);
+    const { error } = await supabase
+      .from("waitlist_signups")
+      .insert({ email: trimmed, source: "footer_waitlist" });
+    setLoading(false);
+    if (error && error.code !== "23505") {
+      toast.error("Something went wrong. Please try again.");
+      return;
+    }
     setSubmitted(true);
-    toast.success("You're on the list. We'll be in touch.");
+    toast.success(
+      error?.code === "23505"
+        ? "You're already on the list — we'll be in touch."
+        : "You're on the list. We'll be in touch.",
+    );
     setEmail("");
   };
 
